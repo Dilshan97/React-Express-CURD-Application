@@ -6,7 +6,13 @@ class edit extends Component {
     render() { 
         return ( 
             <div>
-                <p>edit</p>
+                <div className="card">
+                    <div className="card-body">
+                        <form>
+                            
+                        </form>
+                    </div>
+                </div>
             </div>
          );
     }

@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import axio from 'axios';
 
 class create extends Component {
     
@@ -43,17 +44,23 @@ class create extends Component {
 
     onSubmit(e){
         e.preventDefault();
-        console.log(this.state.name)
-        console.log(this.state.email)
-        console.log(this.state.mobile)
-        console.log(this.state.designation)
+
+        const obj = {
+            name: this.state.name,
+            email: this.state.email,
+            mobile: this.state.mobile,
+            designation: this.state.designation
+        };
         
-        this.setState = {  
+        axio.post('http://localhost:4000/business/add', obj)
+           .then(res => console.log(res.data));
+
+        this.setState({
             name: '',
             email: '',
             mobile:'',
             designation:''
-        }
+        })
     }
     render() { 
         return ( 
